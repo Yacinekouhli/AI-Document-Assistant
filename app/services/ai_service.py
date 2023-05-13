@@ -1,8 +1,16 @@
 import os
 import openai
+from dotenv import load_dotenv
 class AIService:
     def __init__(self):
-        openai.api_key = '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'
+        # Load environment variables from .env file
+        load_dotenv()
+
+        # Get the API key from the environment variable
+        api_key = os.getenv("OPENAI_API_KEY")
+
+        # Set the API key for OpenAI
+        openai.api_key = api_key
         
     def ask(self, prompt, document):
         response = openai.ChatCompletion.create(
