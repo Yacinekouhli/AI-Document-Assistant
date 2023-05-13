@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>AI Document Reader - Answer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Answer from GPT</h1>
-    <p>{{ answer }}</p>
-    <a href="/">Ask another question</a>
+    <div class="container">
+        <h1 class="my-4">Answer from GPT</h1>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">{{ answer }}</p>
+            </div>
+        </div>
+        <a href="/" class="btn btn-primary mt-4">Ask another question</a>
+    </div>
 </body>
 </html>
-
