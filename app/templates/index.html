@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Document Reader</title>
+    <title>AI Document Assistant</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1 class="my-4">AI Document Reader</h1>
+        <h1 class="my-4 text-center">AI Document Assistant</h1>
         <form id="uploadForm" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="file">Upload a PDF:</label>
@@ -23,9 +24,21 @@
                 </div>
             </div>
         </form>
-        <div id="answer"></div>
+        <div id="result-container" class="d-flex justify-content-around mt-4">
+            <div id="answer" class="card p-4 w-50 mr-2">
+                <h2>Your Answer:</h2>
+                <p id="answer-text"></p>
+            </div>
+            <div id="pdf-container" class="card p-4 w-50 ml-2"></div>
+        </div>
     </div>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
+
+
+
+
+
 
